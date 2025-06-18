@@ -1,3 +1,5 @@
+using Microsoft.EntityFrameworkCore;
+using QuoteManager.Infrastructure.Data;
 
 namespace QuoteManager.API
 {
@@ -13,6 +15,8 @@ namespace QuoteManager.API
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            builder.Services.AddDbContext<QuoteDbContext>(options =>
+                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
             var app = builder.Build();
 

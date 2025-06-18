@@ -6,18 +6,23 @@ QuoteManager is a full-stack portfolio project focused on learning and showcasin
 
 ## 🚧 Project Status
 
-> **Currently:** Project initialized.  
-> An empty ASP.NET Core Web API has been set up under `QuoteManager.API/`.  
-> Frontend and other components will follow.
+> **Currently:**  
+> ✅ ASP.NET Core Web API initialized (`QuoteManager.API/`)  
+> ✅ Project structure set up using Clean Architecture  
+> ✅ Database schema defined and initial migration applied (via EF Core & Dockerized SQL Server)  
+> ⏳ Frontend setup (Angular + TypeScript) — _next step_
 
 ---
 
 ## 📁 Structure
 
-QuoteManager/
-├── QuoteManager.API/ # ASP.NET Core Web API backend
-├── README.md # Project readme
-└── .gitignore
+QuoteManager/  
+├── QuoteManager.API/        # ASP.NET Core Web API backend  
+├── QuoteManager.Core/       # Domain entities & business logic  
+├── QuoteManager.Infrastructure/ # EF Core, DB context, and persistence layer
+├── QuoteManager.Tests/      # Backend tests
+├── README.md                # Project readme  
+└── .gitignore               # Git ignore rules
 
 ---
 
@@ -62,6 +67,7 @@ This project will serve as:
 ## 📈 Progress Tracking
 
 The README will be updated as development continues.
+Milestones and commits will reflect major stages (e.g., frontend init, CI/CD setup, cloud deploy).
 
 ---
 
