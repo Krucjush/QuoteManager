@@ -9,6 +9,6 @@ namespace QuoteManager.Core.Entities
         public required string PasswordHash { get; set; }
         public UserRole Role { get; set; }
 
-        public ICollection<Quote>? Quotes { get; set; }
+        public ICollection<Quote> Quotes { get; set; } = [];
     }
 }
