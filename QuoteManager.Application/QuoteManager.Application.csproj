@@ -7,13 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Interfaces\" />
     <Folder Include="UseCases\" />
-    <Folder Include="Services\" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\QuoteManager.Core\QuoteManager.Core.csproj" />
+    <ProjectReference Include="..\QuoteManager.Infrastructure\QuoteManager.Infrastructure.csproj" />
   </ItemGroup>
 
   <ItemGroup>
