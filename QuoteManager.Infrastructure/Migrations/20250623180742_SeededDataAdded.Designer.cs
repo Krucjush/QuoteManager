@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using QuoteManager.Infrastructure.Data;
 
@@ -11,9 +12,11 @@ using QuoteManager.Infrastructure.Data;
 namespace QuoteManager.Infrastructure.Migrations
 {
     [DbContext(typeof(QuoteDbContext))]
-    partial class QuoteDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250623180742_SeededDataAdded")]
+    partial class SeededDataAdded
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -47,10 +50,10 @@ namespace QuoteManager.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("33333333-3333-3333-3333-333333333333"),
-                            CreatedAt = new DateTime(2025, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id = new Guid("cb3ed0bd-462f-4686-bb1e-fd5e2572a7d1"),
+                            CreatedAt = new DateTime(2025, 6, 23, 18, 7, 42, 175, DateTimeKind.Utc).AddTicks(7984),
                             Title = "Sample Quote for Customer",
-                            UserId = new Guid("22222222-2222-2222-2222-222222222222")
+                            UserId = new Guid("78ccac43-a10e-44eb-916b-e86f0790667e")
                         });
                 });
 
@@ -63,11 +66,10 @@ namespace QuoteManager.Infrastructure.Migrations
                     b.Property<decimal>("BasePrice")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<string>("ProductCode")
-                        .IsRequired()
+                    b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ProductName")
+                    b.Property<string>("ProductCode")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -89,22 +91,22 @@ namespace QuoteManager.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("44444444-4444-4444-4444-444444444444"),
+                            Id = new Guid("b7c8a542-c2b0-4570-a3be-0e885e2b07ae"),
                             BasePrice = 100.00m,
+                            Description = "Sample Product 1",
                             ProductCode = "P001",
-                            ProductName = "Sample Product 1",
                             Quantity = 2,
-                            QuoteId = new Guid("33333333-3333-3333-3333-333333333333"),
+                            QuoteId = new Guid("cb3ed0bd-462f-4686-bb1e-fd5e2572a7d1"),
                             ResellerPrice = 95.00m
                         },
                         new
                         {
-                            Id = new Guid("55555555-5555-5555-5555-555555555555"),
+                            Id = new Guid("2849dbe6-086d-4b9a-9e22-244e9125fe74"),
                             BasePrice = 150.00m,
+                            Description = "Sample Product 2",
                             ProductCode = "P002",
-                            ProductName = "Sample Product 2",
                             Quantity = 1,
-                            QuoteId = new Guid("33333333-3333-3333-3333-333333333333"),
+                            QuoteId = new Guid("cb3ed0bd-462f-4686-bb1e-fd5e2572a7d1"),
                             ResellerPrice = 140.00m
                         });
                 });
@@ -134,14 +136,14 @@ namespace QuoteManager.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("11111111-1111-1111-1111-111111111111"),
+                            Id = new Guid("2492216f-004f-4999-a668-64cd9a1cd112"),
                             Email = "admin@example.com",
                             PasswordHash = "AdminPassword",
                             Role = "Admin"
                         },
                         new
                         {
-                            Id = new Guid("22222222-2222-2222-2222-222222222222"),
+                            Id = new Guid("78ccac43-a10e-44eb-916b-e86f0790667e"),
                             Email = "customer@example.com",
                             PasswordHash = "CustomerPassword",
                             Role = "Customer"

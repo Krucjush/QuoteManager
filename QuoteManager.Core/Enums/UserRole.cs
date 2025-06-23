@@ -1,5 +1,4 @@
-﻿
-namespace QuoteManager.Core.Enums
+﻿namespace QuoteManager.Core.Enums
 {
     public enum UserRole
     {

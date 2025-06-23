@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using QuoteManager.Infrastructure.Data;
 
@@ -11,9 +12,11 @@ using QuoteManager.Infrastructure.Data;
 namespace QuoteManager.Infrastructure.Migrations
 {
     [DbContext(typeof(QuoteDbContext))]
-    partial class QuoteDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250623181159_SeedDataFix")]
+    partial class SeedDataFix
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -63,11 +66,10 @@ namespace QuoteManager.Infrastructure.Migrations
                     b.Property<decimal>("BasePrice")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<string>("ProductCode")
-                        .IsRequired()
+                    b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ProductName")
+                    b.Property<string>("ProductCode")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -91,8 +93,8 @@ namespace QuoteManager.Infrastructure.Migrations
                         {
                             Id = new Guid("44444444-4444-4444-4444-444444444444"),
                             BasePrice = 100.00m,
+                            Description = "Sample Product 1",
                             ProductCode = "P001",
-                            ProductName = "Sample Product 1",
                             Quantity = 2,
                             QuoteId = new Guid("33333333-3333-3333-3333-333333333333"),
                             ResellerPrice = 95.00m
@@ -101,8 +103,8 @@ namespace QuoteManager.Infrastructure.Migrations
                         {
                             Id = new Guid("55555555-5555-5555-5555-555555555555"),
                             BasePrice = 150.00m,
+                            Description = "Sample Product 2",
                             ProductCode = "P002",
-                            ProductName = "Sample Product 2",
                             Quantity = 1,
                             QuoteId = new Guid("33333333-3333-3333-3333-333333333333"),
                             ResellerPrice = 140.00m
