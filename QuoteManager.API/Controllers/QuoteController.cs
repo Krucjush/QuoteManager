@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using QuoteManager.Application.DTOs;
 using QuoteManager.Application.Interfaces;
 
@@ -6,6 +7,7 @@ namespace QuoteManager.API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize]
     public class QuoteController(IQuoteService quoteService) : ControllerBase
     {
         private readonly IQuoteService _quoteService = quoteService;
