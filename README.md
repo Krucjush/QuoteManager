@@ -12,37 +12,41 @@ QuoteManager is a full-stack portfolio project focused on learning and showcasin
 > ✅ Database schema defined and initial migration applied (via EF Core & Dockerized SQL Server)  
 > ✅ Authentication & Authorization implemented with JWT tokens  
 > ✅ Secured API endpoints with role-based authorization  
-> ⏳ Frontend setup (Angular + TypeScript) — _next step_
+> ✅ Unit tests for core services (AuthService, QuoteService)  
+> ⏳ CI/CD setup with GitHub Actions — _next step_  
+> ⏳ Frontend setup (Angular + TypeScript)  
 
 ---
 
 ## 🔐 Authentication & Authorization
 
 - User registration and login endpoints implemented with JWT-based authentication  
-- Secured all quote and quote item API endpoints using role-based authorization  
+- All quote and quote item endpoints secured using `[Authorize]`  
 - Passwords are hashed securely before storing in the database  
+- Secrets like JWT key and DB password moved to `.env` file for security
 
 ---
 
 ## 📁 Structure
 
 QuoteManager/  
-├── QuoteManager.API/        # ASP.NET Core Web API backend  
-├── QuoteManager.Core/       # Domain entities & business logic  
-├── QuoteManager.Infrastructure/ # EF Core, DB context, and persistence layer  
-├── QuoteManager.Tests/      # Backend tests  
-├── README.md                # Project readme  
-└── .gitignore               # Git ignore rules
+├── QuoteManager.API/         # ASP.NET Core Web API backend  
+├── QuoteManager.Application/ # Business logic, use cases, interfaces  
+├── QuoteManager.Core/        # Domain entities & contracts  
+├── QuoteManager.Infrastructure/ # EF Core context, repositories  
+├── QuoteManager.Tests/       # Unit & integration tests  
+├── README.md                 # Project overview  
+└── .gitignore                # Git ignore rules  
 
 ---
 
 ## 🧠 Purpose
 
-This project will serve as:
+This project serves as:
 
 - A portfolio piece to demonstrate real-world architecture and DevOps knowledge  
 - A learning playground for full-stack development  
-- A foundation to gradually include advanced technologies
+- A foundation to gradually include advanced technologies  
 
 ---
 
@@ -57,7 +61,7 @@ This project will serve as:
 - CI/CD with GitHub Actions  
 - Monitoring (Prometheus + Grafana)  
 - Full role-based access control  
-- Automated testing (unit + integration)
+- Automated testing (unit + integration)  
 
 ---
 
@@ -70,14 +74,14 @@ This project will serve as:
 - Azure  
 - Redis / RabbitMQ  
 - Prometheus / Grafana  
-- Serilog / Swagger / Health Checks
+- Serilog / Swagger / Health Checks  
 
 ---
 
 ## 📈 Progress Tracking
 
 The README will be updated as development continues.  
-Milestones and commits will reflect major stages (e.g., frontend init, CI/CD setup, cloud deploy).
+Milestones and commits will reflect major stages (e.g., frontend init, CI/CD setup, cloud deploy).  
 
 ---
 
