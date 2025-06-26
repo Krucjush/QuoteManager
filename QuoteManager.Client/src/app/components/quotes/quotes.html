@@ -1,0 +1,7 @@
+<h2>Quotes</h2>
+<div *ngIf="quotes.lenght === 0">No quotes found.</div>
+<ul>
+    <li *ngFor="let quote of quotes">
+        <strong>{{ quote.title }}</strong>: {{ quote.description }}
+    </li>
+</ul>
