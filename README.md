@@ -4,16 +4,32 @@ QuoteManager is a full-stack portfolio project focused on learning and showcasin
 
 ---
 
+## 🚀 How to Run
+
+To run the entire QuoteManager application (API, frontend, and database) locally with Docker Compose, follow these steps:
+    1. Make sure you have [Docker](https://www.docker.com/) installed and running.
+    2. Clone this repository and navigate to the project root directory.
+    3. Run the following command to build and start all services:
+        docker compose up --build
+    4. Once the services are running, access the frontend at:
+        http://localhost:4200
+    5. The backend API will be available at:
+        http://localhost:8080
+    6. To stop the services, press Ctrl+C and then run:
+        docker compose down
+
 ## 🚧 Project Status
 
 > **Currently:**  
-> ✅ ASP.NET Core Web API initialized (`QuoteManager.API/`)  
-> ✅ Project structure set up using Clean Architecture  
-> ✅ Database schema defined and initial migration applied (via EF Core & Dockerized SQL Server)  
-> ✅ Authentication & Authorization implemented with JWT tokens  
-> ✅ Secured API endpoints with role-based authorization  
-> ✅ Unit tests for core services (AuthService, QuoteService)  
-> ⏳ CI/CD setup with GitHub Actions — _next step_  
+> ✅ ASP.NET Core Web API initialized (QuoteManager.API/)
+> ✅ Project structure set up using Clean Architecture
+> ✅ Database schema defined and initial migration applied (via EF Core & Dockerized SQL Server)
+> ✅ Authentication & Authorization implemented with JWT tokens
+> ✅ Secured API endpoints with role-based authorization
+> ✅ Unit tests for core services (AuthService, QuoteService)
+> ✅ Angular frontend added and Dockerized (QuoteManager.Client/)
+> ✅ Docker Compose setup with backend, frontend, and SQL Server
+> ⏳ CI/CD setup with GitHub Actions — next step 
 > ⏳ Frontend setup (Angular + TypeScript)  
 
 ---
@@ -29,14 +45,15 @@ QuoteManager is a full-stack portfolio project focused on learning and showcasin
 
 ## 📁 Structure
 
-QuoteManager/  
-├── QuoteManager.API/         # ASP.NET Core Web API backend  
-├── QuoteManager.Application/ # Business logic, use cases, interfaces  
-├── QuoteManager.Core/        # Domain entities & contracts  
+QuoteManager/
+├── QuoteManager.API/          # ASP.NET Core Web API backend  
+├── QuoteManager.Application/  # Business logic, use cases, interfaces  
+├── QuoteManager.Core/         # Domain entities & contracts  
 ├── QuoteManager.Infrastructure/ # EF Core context, repositories  
-├── QuoteManager.Tests/       # Unit & integration tests  
-├── README.md                 # Project overview  
-└── .gitignore                # Git ignore rules  
+├── QuoteManager.Client/       # Angular frontend app  
+├── QuoteManager.Tests/        # Unit & integration tests  
+├── README.md                  # Project overview  
+└── .gitignore                 # Git ignore rules   
 
 ---
 

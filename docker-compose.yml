@@ -33,6 +33,18 @@ services:
       - SA_PASSWORD=yourStrong(!)Password
     networks:
       - quotemanager-net
+  
+  quotemanager.client:
+    build:
+      context: ./QuoteManager.Client
+      dockerfile: Dockerfile
+    container_name: quotemanager_client
+    ports:
+      - "4200:80"
+    networks:
+      - quotemanager-net
+    depends_on:
+      - quotemanager.api
 
 networks:
   quotemanager-net:
